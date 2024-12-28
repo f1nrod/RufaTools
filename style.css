@@ -1,0 +1,88 @@
+html {
+    background-color: #c9ad63;
+}
+
+body {
+    font-family: Verdana, "Trebuchet MS", Tahoma, Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#leftImg {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 400px;
+    display: block;
+    text-align: left;
+    background-image: url("https://s1.fourmizzz.fr/images/design7/gauche.jpg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color: black;
+    border-right: solid 2px black;
+}
+
+#rightImg {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 400px;
+    display: block;
+    text-align: right;
+    background-image: url("https://s1.fourmizzz.fr/images/design7/droite.jpg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color: black;
+    border-left: solid 2px black;
+}
+
+#center {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 1em;
+    margin: 0px 408px 0px 408px;
+    text-align: left;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 22px;
+    font-weight: bold;
+    color: brown;
+    font-style: italic;
+}
+
+a:hover {
+    background-color: #7f817d;
+}
+
+#menu {
+    position: fixed;
+    left: 402px;
+    top: 0px;
+    height: 30px;
+    width: 1116px;
+    text-align: center;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: Verdana, "Trebuchet MS", Tahoma, Arial, Helvetica, sans-serif;
+    box-shadow: -0px -5px 10px 0px #181a14 inset;
+    background: #525543;
+    z-index: 20000;
+}
+
+#table {
+    background-color: #d7c384;
+    width: 1100px;
+}
