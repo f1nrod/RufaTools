@@ -22,7 +22,7 @@ a {
     width: 400px;
     display: block;
     text-align: left;
-    background-image: url("https://s1.fourmizzz.fr/images/design7/gauche.jpg");
+    background-image: url("left.jpg");
     background-position: top right;
     background-repeat: no-repeat;
     background-color: black;
@@ -37,7 +37,7 @@ a {
     width: 400px;
     display: block;
     text-align: right;
-    background-image: url("https://s1.fourmizzz.fr/images/design7/droite.jpg");
+    background-image: url("right.jpg");
     background-position: top right;
     background-repeat: no-repeat;
     background-color: black;
