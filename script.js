@@ -17,7 +17,7 @@ document.querySelector('#format').addEventListener('click', () => {
     ]);
 
     const farmers_regex = new RegExp('(' + Array.from(farmers.keys()).join('|') + ')', 'i');
-    // (Wolftoes|scout|myshadow|wolfe|jamie123|Drongo|JimmyVe|gara|tamandua|spook|antlover|iperuk)
+    // (Wolftoes|scout|myshadow|wolfe|jamie123|Drongo|JimmyVe|gara|tamandua|spook|antlover|viperuk)
 
     document.querySelector('#input').value.split(/\n[\d\s]+\n/).map(line => {
         // splits the line after the "remaining mats to send", for example: 
@@ -34,12 +34,8 @@ document.querySelector('#format').addEventListener('click', () => {
             if (line.includes("+")) { //locate the + sign and take the numbers after that in a string
                 matstr = line.split("+")[1].split("\n")[0].match(/\d/g);
                 materials = parseInt(matstr.join("")); //from string to number
-                //console.log(farmer[0] + ": " + materials);
+                console.log(farmer[0] + ": " + materials);
                 farmers.set(farmer[0], farmers.get(farmer[0]) + materials); // mdd to total for this farmer
-                console.log(farmer[0]);
-                console.log(farmer[1]);
-                console.log(farmer[2]);
-                console.log(farmer[3]);
             }
         }
     });
