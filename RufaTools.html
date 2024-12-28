@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        html {
+            background-color: #c9ad63;
+        }
+
+        body {
+            font-family: Verdana, "Trebuchet MS", Tahoma, Arial, Helvetica, sans-serif;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #leftImg {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 400px;
+            display: block;
+            text-align: left;
+            background-image: url("https://s1.fourmizzz.fr/images/design7/gauche.jpg");
+            background-position: top right;
+            background-repeat: no-repeat;
+            background-color: black;
+            border-right: solid 2px black;
+        }
+
+        #rightImg {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            width: 400px;
+            display: block;
+            text-align: right;
+            background-image: url("https://s1.fourmizzz.fr/images/design7/droite.jpg");
+            background-position: top right;
+            background-repeat: no-repeat;
+            background-color: black;
+            border-left: solid 2px black;
+        }
+
+        #center {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            font-size: 1em;
+            margin: 0px 408px 0px 408px;
+            text-align: left;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 0px;
+            margin-top: 0px;
+            font-size: 22px;
+            font-weight: bold;
+            color: brown;
+            font-style: italic;
+        }
+
+        a:hover {
+            background-color: #7f817d;
+        }
+
+        #menu {
+            position: fixed;
+            left: 402px;
+            top: 0px;
+            height: 30px;
+            width: 1116px;
+            text-align: center;
+            display: inline-block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-family: Verdana, "Trebuchet MS", Tahoma, Arial, Helvetica, sans-serif;
+            box-shadow: -0px -5px 10px 0px #181a14 inset;
+            background: #525543;
+            z-index: 20000;
+        }
+
+        table {
+            background-color: #d7c384;
+            width: 1100px;
+        }
+    </style>
+
+    <title>Rufa tools</title>
+</head>
+
+<body style="background-color:#c9ad63;">
+
+    <div align="center">
+        <img src="https://www.formicarium.it/cose/antzzz/rufa-sign.png" width="180px" height="180px"
+            style="padding-top: 50px;">
+    </div>
+
+    <nav id="menu">
+        <ul style="list-style-type:none; margin: 0px; padding: 0px; ">
+            <li style="float: left; margin-top: 4px; margin-left: 4px;"> <a style="color: #d3d9b8; ;"
+                    href="http://s1.antzzz.org/alliance.php?forum_menu&section=6256" target="_blank"
+                    rel="noopener noreferrer">Rufa board</a></li>
+        </ul>
+    </nav>
+
+    <div id="leftImg"></div>
+    <div id="rightImg"></div>
+    <div id="center">
+        <div>
+            <h2 style="color: brown; font-style: italic; margin: 4px; text-align: center;">Rufa convoy formatter</h2>
+            <p style="margin: 4px; text-align: center;"><strong>
+                    Sums the amount of materials sent by each farmer.<br>
+                    Copy all the messages from the board and paste in the Input table, click format and check the
+                    Output.<br>
+                    You can then paste the results on the board for everyone to see.
+                </strong></p>
+        </div>
+        <table cellspacing="10" style="font-size: 1em; border:ridge;border-color: #8c7737;">
+            <td align="left">
+                <span class="title">Input</span><br>
+                <textarea id="input" cols="150" rows="12" placeholder=" Paste text here."></textarea><br>
+            </td>
+        </table>
+        <br>
+        <table cellspacing="10" style="font-size: 1em; border:ridge;border-color: #8c7737;">
+            <td align="left">
+                <span class="title">Output</span><br>
+                <textarea id="output" cols="150" rows="12" readonly="readonly"
+                    placeholder="Output will go here."></textarea>
+            </td>
+        </table>
+        <center>
+            <br>
+            <button id="format">Format</button>
+            <button id="clear">Clear Input</button>
+            <button id="clear2">Clear Output</button>
+        </center>
+    </div>
+    <script>
+        //main code START
+        document.querySelector('#format').addEventListener('click', () => {
+
+            const farmers = new Map([
+                ["Wolftoes", 0],
+                ["scout", 0],
+                ["MyShadow", 0],
+                ["wolfe", 0],
+                ["Jamie123", 0],
+                ["Drongo", 0],
+                ["JimmyVe", 0],
+                ["gara", 0],
+                ["tamandua", 0],
+                ["spook", 0],
+                ["AntLover", 0],
+                ["viperuk", 0]
+            ]);
+
+            const farmers_regex = new RegExp('(' + Array.from(farmers.keys()).join('|') + ')', 'i');
+            // (Wolftoes|scout|myshadow|wolfe|jamie123|Drongo|JimmyVe|gara|tamandua|spook|antlover|iperuk)
+
+            document.querySelector('#input').value.split(/\n[\d\s]+\n/).map(line => {
+                // splits the line after the "remaining mats to send", for example: 
+                //wolfe
+                //Mar 23 at 9:30 pm
+                //Delete Modify+1490
+                //3 910                 <-- splits here
+
+
+                //console.log("\nLINE:\n" + line + "\n"); //for debugging
+
+                const farmer = line.match(farmers_regex); //check which farmer sent this message 
+                if (farmer) { 
+                    if (line.includes("+")) { //locate the + sign and take the numbers after that in a string
+                        matstr = line.split("+")[1].split("\n")[0].match(/\d/g);
+                        materials = parseInt(matstr.join("")); //from string to number
+                        //console.log(farmer[0] + ": " + materials);
+                        farmers.set(farmer[0], farmers.get(farmer[0]) + materials); // mdd to total for this farmer
+                        console.log(farmer[0]);
+                        console.log(farmer[1]);
+                        console.log(farmer[2]);
+                        console.log(farmer[3]);
+                    }
+                }
+            });
+
+            let totalSent = Array.from(farmers.values()).reduce((acc, val) => acc + val, 0);
+
+            //output parse
+            document.querySelector('#output').value = '[b]Convoy STATS:[/b]';
+            farmers.forEach(function (val, key) {
+                if (val > 0) document.querySelector('#output').value += '\n[b]' + key + ':[/b]  +' + val;
+            });
+            document.querySelector('#output').value += '\n' + '[b]' + 'TOTAL SENT:[/b]  +' + totalSent;
+
+        }); //main code END
+
+        // for clearing the input
+        document.querySelector('#clear').addEventListener('click', () => {
+            document.querySelector('#input').value = "";
+        })
+
+        // for clearing the output
+        document.querySelector('#clear2').addEventListener('click', () => {
+            document.querySelector('#output').value = "";
+        })
+    </script>
+</body>
+
+</html>
