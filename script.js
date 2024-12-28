@@ -27,7 +27,7 @@ document.querySelector('#format').addEventListener('click', () => {
         //3 910                 <-- splits here
 
 
-        //console.log("\nLINE:\n" + line + "\n"); //for debugging
+        console.log("\nLINE:\n" + line + "\n"); //for debugging
 
         const farmer = line.match(farmers_regex); //check which farmer sent this message 
         if (farmer) { 
