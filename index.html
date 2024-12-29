@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -13,23 +13,25 @@
 </head>
 
 <body style="background-color:#c9ad63;">
-
-    <div align="center">
-        <img src="https://www.formicarium.it/cose/antzzz/rufa-sign.png" width="180px" height="180px"
-            style="padding-top: 50px;">
-    </div>
-
-    <nav id="menu">
-        <ul style="list-style-type:none; margin: 0px; padding: 0px; ">
-            <li style="float: left; margin-top: 4px; margin-left: 4px;"> <a style="color: #d3d9b8; ;"
-                    href="http://s1.antzzz.org/alliance.php?forum_menu&section=6256" target="_blank"
-                    rel="noopener noreferrer">Rufa board</a></li>
-        </ul>
-    </nav>
-
+    
     <div id="leftImg"></div>
     <div id="rightImg"></div>
+
     <div id="center">
+        <nav id="menu">
+            <ul style="list-style-type:none;">
+                <li style="float: left;">
+                    <a id="MenuIcon" href="http://s1.antzzz.org/alliance.php?forum_menu&section=6256"
+                        target="_blank" rel="noopener noreferrer"><span></span>Message Board
+                        
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div align="center">
+            <img src="https://www.formicarium.it/cose/antzzz/rufa-sign.png" width="180px" height="180px"
+                style="padding-top: 50px;">
+        </div>
         <div>
             <h2 style="color: brown; font-style: italic; margin: 4px; text-align: center;">Rufa convoy formatter</h2>
             <p style="margin: 4px; text-align: center;"><strong>
@@ -39,10 +41,10 @@
                     You can then paste the results on the board for everyone to see.
                 </strong></p>
         </div>
-        <table cellspacing="10" style="font-size: 1em; border:ridge;border-color: #8c7737;">
+        <table id="table" align="center" cellspacing="10">
             <td align="left">
                 <span class="title">Input</span><br>
-                <textarea id="input" cols="150" rows="12" placeholder="Paste here from board, example:
+                <textarea id="input" placeholder="Paste here from board, example:
                 Jamie123 
                 Feb 3 at 5:24 pm
                 Delete Modify+1200
@@ -54,11 +56,10 @@
             </td>
         </table>
         <br>
-        <table cellspacing="10" style="font-size: 1em; border:ridge;border-color: #8c7737;">
+        <table id="table" align="center" cellspacing="10">
             <td align="left">
                 <span class="title">Output</span><br>
-                <textarea id="output" cols="150" rows="12" readonly="readonly"
-                    placeholder="Output will go here."></textarea>
+                <textarea id="output" readonly="readonly"  placeholder="Output will go here."></textarea>
             </td>
         </table>
         <center>
