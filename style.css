@@ -92,7 +92,10 @@ a {
     #menu {
         left: 0px;
         right: 0px;
-}
+    }
+    #input, #output {
+        width: 100%;
+    }
 }
 
 .title {
