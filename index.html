@@ -13,38 +13,40 @@
 </head>
 
 <body style="background-color:#c9ad63;">
-    
-    <div id="leftImg"></div>
-    <div id="rightImg"></div>
+    <center>
 
-    <div id="center">
-        <nav id="menu">
-            <ul style="list-style-type:none;">
-                <li style="float: left;">
-                    <a id="MenuIcon" href="http://s1.antzzz.org/alliance.php?forum_menu&section=6256"
-                        target="_blank" rel="noopener noreferrer"><span></span>Message Board
-                        
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div align="center">
-            <img src="https://www.formicarium.it/cose/antzzz/rufa-sign.png" width="180px" height="180px"
-                style="padding-top: 50px;">
-        </div>
-        <div>
-            <h2 style="color: brown; font-style: italic; margin: 4px; text-align: center;">Rufa convoy formatter</h2>
-            <p style="margin: 4px; text-align: center;"><strong>
-                    Sums the amount of materials sent by each farmer.<br>
-                    Copy all the messages from the board and paste in the Input table, click format and check the
-                    Output.<br>
-                    You can then paste the results on the board for everyone to see.
-                </strong></p>
-        </div>
-        <table id="table" align="center" cellspacing="10">
-            <td align="left">
-                <span class="title">Input</span><br>
-                <textarea id="input" placeholder="Paste here from board, example:
+        <div id="leftImg"></div>
+        <div id="rightImg"></div>
+
+        <div id="center">
+            <nav id="menu">
+                <ul style="list-style-type:none;">
+                    <li style="float: left;">
+                        <a id="MenuIcon" href="http://s1.antzzz.org/alliance.php?forum_menu&section=6256"
+                            target="_blank" rel="noopener noreferrer"><span></span>Message Board
+
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div align="center">
+                <img src="https://www.formicarium.it/cose/antzzz/rufa-sign.png" width="180px" height="180px"
+                    style="padding-top: 50px;">
+            </div>
+            <div>
+                <h2 style="color: brown; font-style: italic; margin: 4px; text-align: center;">Rufa convoy formatter
+                </h2>
+                <p style="margin: 4px; text-align: center;"><strong>
+                        Sums the amount of materials sent by each farmer.<br>
+                        Copy all the messages from the board and paste in the Input table, click format and check the
+                        Output.<br>
+                        You can then paste the results on the board for everyone to see.
+                    </strong></p>
+            </div>
+            <table id="table" cellspacing="10">
+                <td>
+                    <label class="title">Input</label><br>
+                    <textarea id="input" placeholder="Paste here from board, example:
                 Jamie123 
                 Feb 3 at 5:24 pm
                 Delete Modify+1200
@@ -53,22 +55,23 @@
                 Feb 3 at 7:47 pm
                 Delete Modify+1000
                 36 660."></textarea><br>
-            </td>
-        </table>
-        <br>
-        <table id="table" align="center" cellspacing="10">
-            <td align="left">
-                <span class="title">Output</span><br>
-                <textarea id="output" readonly="readonly"  placeholder="Output will go here."></textarea>
-            </td>
-        </table>
-        <center>
+                </td>
+            </table>
             <br>
-            <button id="format">Format</button>
-            <button id="clear">Clear Input</button>
-            <button id="clear2">Clear Output</button>
-        </center>
-    </div>
+            <table id="table" cellspacing="10">
+                <td>
+                    <label class="title">Output</label><br>
+                    <textarea id="output" readonly="readonly" placeholder="Output will go here."></textarea>
+                </td>
+            </table>
+            <br>
+            <footer>
+                <button id="format">Format</button>
+                <button id="clear">Clear Input</button>
+                <button id="clear2">Clear Output</button>
+            </footer>
+        </div>
+    </center>
     <script type="text/javascript" src="script.js"></script>
 </body>
 

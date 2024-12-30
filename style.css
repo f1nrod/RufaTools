@@ -30,7 +30,7 @@ body {
     background: #525543;
 }
 
-#MenuIcon span {
+#MenuIcon span  {
     height: 26px;
     width: 24px;
     background-size: 235px 330px;
@@ -43,7 +43,7 @@ body {
 }
 
 a {
-    display: inline-block;
+    display: flex;
     width: 100%;
     height: 100%;
     font-weight: bold;
@@ -79,7 +79,7 @@ a {
     border-left: solid 2px black;
 }
 
-@media only screen and (max-width: 86em) {
+@media only screen and (max-width: 84em) {
     #leftImg {
         display: none;
     }
@@ -93,18 +93,24 @@ a {
         left: 0px;
         right: 0px;
     }
+    #table {
+        margin-left: 8px;
+    }
     #input, #output {
         width: 100%;
+        height: 150px;
+        box-sizing: border-box;
+        text-align: left;
+        resize: vertical;
     }
 }
 
 .title {
-    text-align: center;
     margin-bottom: 0px;
     margin-top: 0px;
     font-size: 22px;
     font-weight: bold;
-    color: brown;
+    color: #c5130f;
     font-style: italic;
 }
 
@@ -112,21 +118,36 @@ a:hover {
     background-color: #7f817d;
 }
 
-#table {
-    display: flex;
-    height:fit-content;
-    font-size: 1em; 
-    border: ridge; 
-    border-color: #8c7737;
+table {
+    width: 100%;
+    margin: auto;
+    margin-bottom: auto;
+    background-color: #d7c384;
+    margin-bottom: 5px;
+    border: 2px solid #665832;
 }
 
-#input, #output {
-    width: 360%;
-    height: 170px;
-    padding: 12px 20px;
+#input {
+    width: 100%;
+    height: 150px;
+    padding: 12px 12px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    background-color: #f8f8f8;
+    resize: vertical;
+}
+
+#output {
+    width: 100%;
+    height: 150px;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
     resize: none;
+}
+
+tbody, tr, td {
+    width: 100%;
+    align-items: center;
 }
