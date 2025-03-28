@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Rufa Tools</title>
+</head>
+
+<body style="background-color:#c9ad63;">
+    <center>
+
+        <div id="leftImg"></div>
+        <div id="rightImg"></div>
+
+        <div id="center">
+            <nav id="menu">
+                <ul style="list-style-type:none;">
+                    <li style="float: left;">
+                        <a id="MenuIcon" href="http://s1.antzzz.org/alliance.php?forum_menu&section=6256"
+                            target="_blank" rel="noopener noreferrer"><span></span>Message Board
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div align="center">
+                <img src="rufa-sign.png" width="180px" height="180px"
+                    style="padding-top: 50px;">
+            </div>
+            <div>
+                <h2 style="color: brown; font-style: italic; margin: 4px; text-align: center;">Rufa alliance ranking history scanner</h2>
+                <p style="margin: 4px; text-align: center;"><strong>
+Given the thread of an alliance ranking history shows sums and progresses
+                    </strong></p>
+            </div>
+            <table id="table" cellspacing="10">
+                <td>
+                    <label class="title">Input</label><br>
+                    <textarea id="input" placeholder="Paste here from board, example:
+SergioC
+Mar 21 at 9:03 am
+DeleteModifyW1 | Alliances ranking
+
+Rang Pseudo Terrain Technologie Fourmiliere
+1 Moissonneur - dreck 170 000 000 000 229 416
+2 Moissonneur - greyman 160 000 000 000 232 410
+3 Moissonneur - krystale 150 000 000 000 220 393
+"></textarea><br>
+                </td>
+            </table>
+            <br>
+            <table id="table" cellspacing="10">
+                <td>
+                    <label class="title">Output</label><br>
+                    <table id="output"></textarea>
+                </td>
+            </table>
+            <br>
+            <footer>
+                <button id="format">Format</button>
+                <button id="clear">Clear Input</button>
+                <button id="clear2">Clear Output</button>
+            </footer>
+        </div>
+    </center>
+    <script type="text/javascript" src="allistat.js"></script>
+</body>
+</html>
+
