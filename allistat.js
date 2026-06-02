@@ -1,5 +1,10 @@
 //main code START
 
+function formatNumberWithSpaces(num) {
+  // Converts 1000000 to "1 000 000"
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+}
+
 function prepareDeltaSpan(n) {
 // given a number returns a span element with a space in front, +/- sign and a style
   let style = n > 0 ? "green" : "red";
@@ -144,9 +149,9 @@ console.log(`${tstamp}`);
       if (role != odata.role) {
         cell.appendChild(prepareDeltaSpan("new"));
       }
-      (cell = coloRow.insertCell()).appendChild(document.createTextNode(hf));
+      (cell = coloRow.insertCell()).appendChild(document.createTextNode(formatNumberWithSpaces(hf)));
       if (hf - odata.hf) {
-        cell.appendChild(prepareDeltaSpan(hf - odata.hf));
+        cell.appendChild(prepareDeltaSpan(formatNumberWithSpaces(hf - odata.hf)));
       }
       (cell = coloRow.insertCell()).appendChild(document.createTextNode(tech));
       if (tech != odata.tech != 0) {
@@ -175,17 +180,17 @@ console.log(`${tstamp}`);
     }
     let cell;
     (cell = postRow.insertCell()).appendChild(document.createTextNode(tstamp));
-    (cell = postRow.insertCell()).appendChild(document.createTextNode(stat.thf));
+    (cell = postRow.insertCell()).appendChild(document.createTextNode(formatNumberWithSpaces(stat.thf)));
     if (stat.thf - ostat.thf != 0) {
-      cell.appendChild(prepareDeltaSpan(stat.thf - ostat.thf));
+      cell.appendChild(prepareDeltaSpan(formatNumberWithSpaces(stat.thf - ostat.thf)));
     }
 
-    (cell = postRow.insertCell()).appendChild(document.createTextNode(stat.ttech));
+    (cell = postRow.insertCell()).appendChild(document.createTextNode(formatNumberWithSpaces(stat.ttech)));
     if (stat.ttech - ostat.ttech != 0) {
       cell.appendChild(prepareDeltaSpan(stat.ttech - ostat.ttech));
     }
 
-    (cell = postRow.insertCell()).appendChild(document.createTextNode(stat.tanth));
+    (cell = postRow.insertCell()).appendChild(document.createTextNode(formatNumberWithSpaces(stat.tanth)));
     if (stat.tanth - ostat.tanth != 0) {
       cell.appendChild(prepareDeltaSpan(stat.tanth - ostat.tanth));
     }
@@ -214,3 +219,7 @@ console.log(`${tstamp}`);
 
 });
 
+// for clearing the input
+document.querySelector('#clear').addEventListener('click', () => {
+    document.querySelector('#input').value = "";
+})
