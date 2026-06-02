@@ -21,6 +21,7 @@ body {
     left: 351px;
     right: 351px;;
     top: 0px;
+    bottom: 4px;
     height: 42px;
     text-align: center;
     display: inline-block;
@@ -36,7 +37,7 @@ body {
     background-size: 235px 330px;
     background-image: url('sprite_menu.png');
     vertical-align: -7px;
-    margin-right: 8px;
+    margin-right: 4px;
     display: inline-block;
     margin-top: -5px;
     background-position: -25px -62px;
@@ -51,6 +52,7 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     text-decoration: none;
+    padding-right: 16px;
 }
 
 #leftImg {
